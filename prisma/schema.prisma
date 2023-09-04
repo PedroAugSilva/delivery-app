@@ -1,0 +1,66 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       String  @id @default(uuid())
+  email    String  @unique
+  password String
+  Order    Order[]
+
+  @@map("tb_user")
+}
+
+model Employee {
+  id         String  @id @default(uuid())
+  name       String
+  key_access String
+  role_id    String
+  role       Role    @relation(fields: [role_id], references: [id])
+  Order      Order[]
+
+  @@map("tb_employee")
+}
+
+model Role {
+  id       String     @id @default(uuid())
+  role     String
+  employee Employee[]
+
+  @@map("tb_role")
+}
+
+model Product {
+  id          String   @id @default(uuid())
+  name        String
+  price       Decimal
+  description String
+  photo       String
+  created_at  DateTime @default(now())
+  Order       Order[]
+
+  @@map("tb_product")
+}
+
+model Order {
+  id          String   @id @default(uuid())
+  date        DateTime @default(now())
+  
+  employee_id String
+  product_id String
+  user_id    String
+
+  product     Product  @relation(fields: [product_id], references: [id])
+  user        User     @relation(fields: [user_id], references: [id])
+  emplyee   Employee @relation(fields: [employee_id], references: [id])
+
+  @@map("tb_order")
+}
