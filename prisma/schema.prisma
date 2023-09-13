@@ -6,17 +6,18 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "sqlite"
   url      = env("DATABASE_URL")
 }
 
 model User {
   id       String  @id @default(uuid())
+  username String
   email    String  @unique
   password String
-  Order    Order[]
+  order    Order[]
 
-  @@map("tb_user")
+  @@map("users")
 }
 
 model Employee {
@@ -25,9 +26,9 @@ model Employee {
   key_access String
   role_id    String
   role       Role    @relation(fields: [role_id], references: [id])
-  Order      Order[]
+  order      Order[]
 
-  @@map("tb_employee")
+  @@map("employees")
 }
 
 model Role {
@@ -35,32 +36,42 @@ model Role {
   role     String
   employee Employee[]
 
-  @@map("tb_role")
+  @@map("roles")
 }
 
 model Product {
-  id          String   @id @default(uuid())
-  name        String
-  price       Decimal
-  description String
-  photo       String
-  created_at  DateTime @default(now())
-  Order       Order[]
+  id               String           @id @default(uuid())
+  name             String
+  price            Decimal
+  description      String
+  photo            String
+  amount           Int
+  created_at       DateTime         @default(now())
+  product_in_order ProductInOrder[]
 
-  @@map("tb_product")
+  @@map("products")
+}
+
+model ProductInOrder {
+  id String @id @default(uuid())
+
+  order      Order   @relation(fields: [order_id], references: [id])
+  Product    Product @relation(fields: [product_id], references: [id])
+  product_id String
+  order_id   String
+
+  @@map("product_in_order")
 }
 
 model Order {
   id          String   @id @default(uuid())
   date        DateTime @default(now())
-  
   employee_id String
-  product_id String
-  user_id    String
+  user_id     String
 
-  product     Product  @relation(fields: [product_id], references: [id])
-  user        User     @relation(fields: [user_id], references: [id])
-  emplyee   Employee @relation(fields: [employee_id], references: [id])
+  user           User             @relation(fields: [user_id], references: [id])
+  employee       Employee         @relation(fields: [employee_id], references: [id])
+  ProductInOrder ProductInOrder[]
 
-  @@map("tb_order")
+  @@map("orders")
 }
