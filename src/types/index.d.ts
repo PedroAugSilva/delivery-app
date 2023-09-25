@@ -7,7 +7,7 @@ export type User = {
   password: string;
 };
 
-export type Employee = {
+export type Employer = {
   id: string;
   name: string;
   email: string;
@@ -23,9 +23,9 @@ export interface UserJWT extends Omit<User, "password"> {
   token: string;
 }
 
-export type EmployeeDTO = Omit<Employee, "id">;
+export type EmployerDTO = Omit<Employer, "id">;
 
-export interface EmployeeJWT extends Omit<Employee, "key_acess"> {
+export interface EmployerJWT extends Omit<Employer, "key_acess"> {
   token: string;
 }
 
