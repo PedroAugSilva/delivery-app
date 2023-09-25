@@ -1,1 +1,90 @@
-<h1>Home page</h1>
+<main class="items-center flex flex-col">
+  <header class="w-screen h-14 bg-orange-500 flex items-center justify-center">
+    <div
+      class="w-full max-w-6xl items-center flex flex-row justify-between py-3 px-4"
+    >
+      <div class="w-36 h-full items-center flex flex-row gap-1">
+        <figure class="w-10 h-10 overflow-hidden rounded-full">
+          <img
+            src="https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg"
+            alt=""
+            class="w-full h-full scale-125"
+          />
+        </figure>
+        <span class="flex-1 text-base text-white truncate">Nome do usuário</span>
+      </div>
+      <div class="flex items-center justify-center flex-1">
+        <div
+          class="border border-zinc-500 bg-white flex flex-row items-center justify-center gap-2 pl-4 pr-2 py-0.5 h-max rounded-full"
+        >
+          <input
+            type="text"
+            class="h-8 outline-none border-none text-black w-60"
+            placeholder="Pequisar..."
+          />
+          <button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-search"
+            ><circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /></svg>
+          </button>
+        </div>
+      </div>
+      <div>
+
+        <div x-data="{ dropdownOpen: false }" class="relative my-32">
+          <button
+            @click="dropdownOpen = !dropdownOpen"
+            class="relative z-10 block rounded-md bg-white p-2 focus:outline-none"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-settings"
+            ><path
+                d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"
+              /><circle cx="12" cy="12" r="3" /></svg>
+          </button>
+
+
+
+          <div
+            x-show="dropdownOpen"
+            class="absolute right-0 w-72 mt-1 bg-white rounded-md shadow-lg shadow-black/20 overflow-hidden z-20"
+          >
+            <div class="">
+              <a
+                href="#"
+                class="flex items-center px-4 h-8 hover:bg-gray-100 -mx-2"
+              >
+               <p>Log out</p>
+              </a>
+             
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+
+
+  {{!--  --}}
+  <section></section>
+
+</main>

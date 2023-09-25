@@ -1,10 +1,8 @@
 import express from "express";
 import { engine } from "express-handlebars";
 import { router } from "./routes";
-import cors from "cors";
 
 const app = express();
-// app.use(cors);
 
 app.engine("handlebars", engine({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
