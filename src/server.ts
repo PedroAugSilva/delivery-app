@@ -24,7 +24,6 @@ app.get("/signin", (req, res) => {
 });
 
 
-
 app.get("/employer/signup", (req, res) => {
   res.render("employer-signup");
 });
