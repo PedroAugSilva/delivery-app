@@ -22,6 +22,9 @@ app.get("/signup", (req, res) => {
 app.get("/signin", (req, res) => {
   res.render("signin");
 });
+app.get("/product-register", (req, res) => {
+  res.render("product-register");
+});
 
 app.listen(3000, () =>
   console.log("servidor rodando da url: http://localhost:3000")
