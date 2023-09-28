@@ -45,7 +45,23 @@
             @click="dropdownOpen = !dropdownOpen"
             class="relative z-10 block rounded-md bg-white p-2 focus:outline-none"
           >
-           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-align-justify"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-align-justify"
+            ><line x1="3" x2="21" y1="6" y2="6" /><line
+                x1="3"
+                x2="21"
+                y1="12"
+                y2="12"
+              /><line x1="3" x2="21" y1="18" y2="18" /></svg>
           </button>
           <div
             x-show="dropdownOpen"
@@ -56,40 +72,47 @@
                 href="#"
                 class="flex items-center px-4 h-8 hover:bg-gray-100 -mx-2"
               >
-               <p>Log out</p>
+                <p>Log out</p>
               </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </header>
 
-
-
-  {{!--  --}}
-  <section class="w-full max-w-6xl flex-grow flex items-start justify-center flex-wrap">
-    <div class="w-40 h-60 items-center flex flex-col">
-      <figure class="w-40 h-40">
-        <img src="https://imgcentauro-a.akamaihd.net/230x230/94313731.jpg" alt="" class="w-full h-full">
+  <section
+    class="w-full max-w-6xl flex-grow flex items-start justify-center flex-wrap py-5"
+  >
+    <div
+      class="w-44 h-72 items-start flex flex-col bg-white p-2 rounded shadow-lg shadow-black/20"
+    >
+      <figure class="w-40 h-40 border-b border-zinc-400">
+        <img
+          src="https://imgcentauro-a.akamaihd.net/230x230/94313731.jpg"
+          alt=""
+          class="w-full h-full"
+        />
       </figure>
-      <span>Tênis Nike Revolution 5 Max</span>
-      <button class="items-center justify-center  flex flex-row gap-2 w-full rounded bg-orange-500" > 
-        Adicionar
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          width="24" 
-          height="24" 
-          viewBox="0 0 24 24" 
-          fill="none" 
-          stroke="currentColor" 
-          stroke-width="2" 
-          stroke-linecap="round" 
-          stroke-linejoin="round" 
-          class="lucide lucide-shopping-cart">
-            <circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/>
-            <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
-          </svg>
-        </button>
+      <span class="font-semibold">Tênis Nike Revolution 5 Max</span>
+      <span class="text-zinc-600">249,99</span>
+      <button
+        class="items-center justify-center flex flex-row gap-1 w-full rounded bg-orange-500 hover:bg-orange-600 mt-1 text-white py-1"
+      >
+        Ver mais
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-plus"
+        ><path d="M5 12h14" /><path d="M12 5v14" /></svg>
+      </button>
     </div>
   </section>
 
