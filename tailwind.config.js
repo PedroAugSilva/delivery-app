@@ -2,8 +2,11 @@
 module.exports = {
   content: ['./src/**/*.handlebars'],
   theme: {
-    extend: {},
+    extend: {
+      backgroundColor: {
+        'principal': "#FF8400"
+      }
+    },
   },
   plugins: [],
 }
-
