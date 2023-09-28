@@ -1,3 +1,4 @@
+import { Role } from "@prisma/client";
 import { prisma } from "../lib/prisma";
 
 export type User = {
@@ -7,12 +8,12 @@ export type User = {
   password: string;
 };
 
-export type Employer = {
+
+export type Employee = {
   id: string;
   name: string;
-  email: string;
-  key_acess: string;
-  role: string;
+  key_access: string;
+  role_id: string;
 };
 
 
@@ -23,9 +24,11 @@ export interface UserJWT extends Omit<User, "password"> {
   token: string;
 }
 
-export type EmployerDTO = Omit<Employer, "id">;
 
-export interface EmployerJWT extends Omit<Employer, "key_acess"> {
+
+export type EmployeeDTO = Omit<Employee, "id">;
+
+export interface EmployeeJWT extends Omit<Employee, "key_acess"> {
   token: string;
 }
 

@@ -1,10 +1,8 @@
 import express from "express";
 import { engine } from "express-handlebars";
 import { router } from "./routes";
-import cors from "cors";
 
 const app = express();
-// app.use(cors);
 
 app.engine("handlebars", engine({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
@@ -22,6 +20,21 @@ app.get("/signup", (req, res) => {
 app.get("/signin", (req, res) => {
   res.render("signin");
 });
+app.get("/product-register", (req, res) => {
+  res.render("product-register");
+});
+
+
+app.get("/employee/signup", (req, res) => {
+  res.render("employee-signup");
+});
+
+app.get("/employee/signin", (req, res) => {
+  res.render("employee-signin");
+});
+
+
+
 
 app.listen(3000, () =>
   console.log("servidor rodando da url: http://localhost:3000")
