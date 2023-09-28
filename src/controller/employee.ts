@@ -1,6 +1,9 @@
+
+
 import { uuid } from "uuidv4";
 import { prisma } from "../lib/prisma";
 import { EmployeeDTO, EmployeeJWT } from "../types";
+
 
 class Employee {
   async create({name, key_access, role_id}: EmployeeDTO) {
