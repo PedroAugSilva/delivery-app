@@ -24,12 +24,12 @@ app.get("/signin", (req, res) => {
 });
 
 
-app.get("/employer/signup", (req, res) => {
-  res.render("employer-signup");
+app.get("/employee/signup", (req, res) => {
+  res.render("employee-signup");
 });
 
-app.get("/employer/signin", (req, res) => {
-  res.render("employer-signin");
+app.get("/employee/signin", (req, res) => {
+  res.render("employee-signin");
 });
 
 

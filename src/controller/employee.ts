@@ -22,22 +22,35 @@ class Employee {
       },
     });
   }
+  
 /*
   async authenticate({
+    name,
     key_access,
   }: Omit<EmployeeDTO, "name">): Promise<EmployeeJWT>{
     const alredyExistEmployee = await prisma.user.findFirst({
       where:{
-       , 
+        name, 
       },
     });
+
+    if (!alredyExistEmployee) {
+      throw new Error("user not found");
+    }
+    if (alredyExistEmployee.key_access !== key_access) {
+      throw new Error("passoword incorrect");
+    }
+
+    const jwt: EmployeeJWT = {
+      id: alredyExistEmployee.id,
+      name: alredyExistEmployee.name,
+      token: uuid(),
+    };
+
+    return jwt;
+    
   }*/
 
-
-
-
-
-
-
-
 }
+  export default new Employee();
+  
