@@ -21,6 +21,18 @@ app.get("/signin", (req, res) => {
   res.render("signin");
 });
 
+
+app.get("/employee/signup", (req, res) => {
+  res.render("employee-signup");
+});
+
+app.get("/employee/signin", (req, res) => {
+  res.render("employee-signin");
+});
+
+
+
+
 app.listen(3000, () =>
   console.log("servidor rodando da url: http://localhost:3000")
 );
