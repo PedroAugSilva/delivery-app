@@ -20,6 +20,9 @@ app.get("/signup", (req, res) => {
 app.get("/signin", (req, res) => {
   res.render("signin");
 });
+app.get("/product-register", (req, res) => {
+  res.render("product-register");
+});
 
 
 app.get("/employee/signup", (req, res) => {
